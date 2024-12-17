@@ -4,15 +4,12 @@ $username = "root";
 $password = "";
 $dbname = "car_workshop";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch mechanics
 $sql = "SELECT id, name FROM mechanics";
 $result = $conn->query($sql);
 ?>
@@ -24,11 +21,22 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Workshop Appointment</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
+
+    <nav>
+        <div class="logo">Car Care Workshop</div>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about-us">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <h1>Car Workshop Appointment System</h1>
     
-    <!-- User Panel -->
     <div id="user-panel">
         <h2>User Panel</h2>
         <form id="appointment-form" action="submit_appointment.php" method="POST">
@@ -67,13 +75,5 @@ $result = $conn->query($sql);
             <button type="submit">Submit Appointment</button>
         </form>
     </div>
-
-    <!-- Admin Panel -->
-    <div id="admin-panel">
-        <h2>Admin Panel</h2>
-        <a href="login.php">Go to Admin Panel</a>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

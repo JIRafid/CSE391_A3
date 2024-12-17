@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-// Hardcoded credentials for simplicity
+
 $admin_username = "admin";
-$admin_password = "password123";
+$admin_password = "password";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Validate credentials
+
     if ($username === $admin_username && $password === $admin_password) {
         $_SESSION['admin_logged_in'] = true;
         header("Location: admin_panel.php");
@@ -29,6 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<nav>
+        <div class="logo">Car Care Workshop</div>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about-us">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <h2>Admin Login</h2>
     <form method="POST" action="login.php">
         <label for="username">Admin ID:</label>

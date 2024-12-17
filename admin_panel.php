@@ -4,15 +4,12 @@ $username = "root";
 $password = "";
 $dbname = "car_workshop";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch appointments
 $sql = "SELECT appointments.id, appointments.name, appointments.phone, appointments.car_license, 
         appointments.appointment_date, mechanics.name AS mechanic_name 
         FROM appointments 
@@ -30,6 +27,17 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<nav>
+        <div class="logo">Car Care Workshop</div>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about-us">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="admin-container">
         <h1>Admin Panel - Appointments</h1>
         <?php if ($result->num_rows > 0): ?>
