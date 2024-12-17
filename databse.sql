@@ -20,4 +20,4 @@ CREATE TABLE appointments (
 );
 
 -- Sample mechanics
-INSERT INTO mechanics (name, available_slots) VALUES ('John Doe', 4), ('Jane Smith', 4);
+INSERT INTO mechanics (name, available_slots) VALUES ('Karim', 4), ('Kuddos', 4), ('Sharif', 4), ('Siddique', 4), ('Rubel', 4);
